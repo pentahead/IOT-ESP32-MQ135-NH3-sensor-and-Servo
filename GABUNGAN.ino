@@ -4,10 +4,10 @@
 #include <MQ135.h>
 #include <EEPROM.h>
 
-const char* ssid = "Faruq";
-const char* password = "1sampai66";
-const char* serverNameStatus = "http://192.168.244.162/Monsafe/app/views/user/Pengurasan/control_status.php"; // URL endpoint untuk mengambil status
-const char* serverNamePPM = "http://192.168.244.162/Monsafe/iot.php"; // URL endpoint untuk mengirim data PPM
+const char* ssid = "Faruqwifi"; //ssid wifi
+const char* password = "password666"; //password wifi
+const char* serverNameStatus = "http://localhost/Monsafe/app/views/user/Pengurasan/control_status.php"; // URL endpoint untuk mengambil status
+const char* serverNamePPM = "http://localhost/Monsafe/iot.php"; // URL endpoint untuk mengirim data PPM
 
 Servo myservo;
 String currentStatus = ""; // Variable to store the current status
@@ -119,7 +119,7 @@ void checkStatus() {
         currentStatus = payload;  
 
         if (payload == "ON") {
-          myservo.write(220); // Pindahkan servo ke 180 derajat
+          myservo.write(220); // Pindahkan servo ke 220 derajat
           Serial.println("Servo moved to 200 degrees (ON)");
         } else if (payload == "OFF") {
           myservo.write(0); // Pindahkan servo ke 0 derajat
