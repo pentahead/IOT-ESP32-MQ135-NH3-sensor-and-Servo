@@ -28,7 +28,7 @@ void setup() {
 
   pinMode(ledwifi, OUTPUT);
 
-  WiFi.begin(ssid, password);
+  WiFi.begin(ssid, password); // koneksi ke wifi
   Serial.print("Connecting to WiFi");
 
   while (WiFi.status() != WL_CONNECTED) {
